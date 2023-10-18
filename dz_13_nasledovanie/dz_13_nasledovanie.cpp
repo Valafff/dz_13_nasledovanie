@@ -1,4 +1,4 @@
-#include <iostream>
+п»ї#include <iostream>
 #include <time.h>
 #include <Windows.h>
 #include <conio.h>
@@ -27,10 +27,10 @@ void setCursor(int x, int y)
 	COORD myCoords = { x,y };
 	SetConsoleCursorPosition(hStdOut, myCoords);
 }
-//прочитать про наследование Ромбом
+//РїСЂРѕС‡РёС‚Р°С‚СЊ РїСЂРѕ РЅР°СЃР»РµРґРѕРІР°РЅРёРµ Р РѕРјР±РѕРј
 
 
-//класс Animal - set, get, voice
+//РєР»Р°СЃСЃ Animal - set, get, voice
 //Cat : Animal - set, get,
 //Woolf : Animal  
 
@@ -90,21 +90,21 @@ public:
 	virtual	void Show()
 	{
 		setColor(color, Black);
-		cout << "Объект: " << type << "\tВес, кг: "  << weight << "\t";
+		cout << "РћР±СЉРµРєС‚: " << type << "\tР’РµСЃ, РєРі: "  << weight << "\t";
 		setColor(White, Black);
 	}
 
 	virtual void voice()
 	{
-		cout << "Буль-Буль";
+		cout << "Р‘СѓР»СЊ-Р‘СѓР»СЊ";
 	}
 
 };
 
 class Cat :public Animal
 {
-	//класс наследник будет иметь прямой доступ ко всем компонентам со спецификатором доступа protected
-	//при этом,для любого другого места создания объекта. эти поля будут закрыты от прямого доступа
+	//РєР»Р°СЃСЃ РЅР°СЃР»РµРґРЅРёРє Р±СѓРґРµС‚ РёРјРµС‚СЊ РїСЂСЏРјРѕР№ РґРѕСЃС‚СѓРї РєРѕ РІСЃРµРј РєРѕРјРїРѕРЅРµРЅС‚Р°Рј СЃРѕ СЃРїРµС†РёС„РёРєР°С‚РѕСЂРѕРј РґРѕСЃС‚СѓРїР° protected
+	//РїСЂРё СЌС‚РѕРј,РґР»СЏ Р»СЋР±РѕРіРѕ РґСЂСѓРіРѕРіРѕ РјРµСЃС‚Р° СЃРѕР·РґР°РЅРёСЏ РѕР±СЉРµРєС‚Р°. СЌС‚Рё РїРѕР»СЏ Р±СѓРґСѓС‚ Р·Р°РєСЂС‹С‚С‹ РѕС‚ РїСЂСЏРјРѕРіРѕ РґРѕСЃС‚СѓРїР°
 	int HP = 9;
 public:
 
@@ -129,11 +129,11 @@ public:
 		this->HP = HP;
 		cout << "ctor Cat HP\n";
 	}
-	//передаём управление инициализацей полей, которые пришли в котика из базового класса, конструктору базового класса
+	//РїРµСЂРµРґР°С‘Рј СѓРїСЂР°РІР»РµРЅРёРµ РёРЅРёС†РёР°Р»РёР·Р°С†РµР№ РїРѕР»РµР№, РєРѕС‚РѕСЂС‹Рµ РїСЂРёС€Р»Рё РІ РєРѕС‚РёРєР° РёР· Р±Р°Р·РѕРІРѕРіРѕ РєР»Р°СЃСЃР°, РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂСѓ Р±Р°Р·РѕРІРѕРіРѕ РєР»Р°СЃСЃР°
 	Cat(int HP, int weight, Color color, string type) :Animal(type, color, weight)
 	{
-		//this->type = type;//такое обращение возможно. еесли у базового класса поля со спецификатором доступа protected
-		//this->setType(type);//если поля приватные - то обращение к ним только через методы
+		//this->type = type;//С‚Р°РєРѕРµ РѕР±СЂР°С‰РµРЅРёРµ РІРѕР·РјРѕР¶РЅРѕ. РµРµСЃР»Рё Сѓ Р±Р°Р·РѕРІРѕРіРѕ РєР»Р°СЃСЃР° РїРѕР»СЏ СЃРѕ СЃРїРµС†РёС„РёРєР°С‚РѕСЂРѕРј РґРѕСЃС‚СѓРїР° protected
+		//this->setType(type);//РµСЃР»Рё РїРѕР»СЏ РїСЂРёРІР°С‚РЅС‹Рµ - С‚Рѕ РѕР±СЂР°С‰РµРЅРёРµ Рє РЅРёРј С‚РѕР»СЊРєРѕ С‡РµСЂРµР· РјРµС‚РѕРґС‹
 
 		this->HP = HP;
 		cout << "ctor Cat all\n";
@@ -146,7 +146,7 @@ public:
 
 	void voice() override
 	{
-		cout << "Мяу" << "\t";
+		cout << "РњСЏСѓ" << "\t";
 	}
 };
 
@@ -158,7 +158,7 @@ public:
 
 	void voice() override
 	{
-		cout << "Уууууу";
+		cout << "РЈСѓСѓСѓСѓСѓ";
 	}
 
 	void Show()   override
@@ -166,7 +166,7 @@ public:
 		Animal::Show(); 
 		if (alfa)
 		{
-			cout << "Вожак" << "\t";
+			cout << "Р’РѕР¶Р°Рє" << "\t";
 		}
 	}
 
@@ -187,7 +187,7 @@ public:
 	}
 };
 
-//ДЗ
+//Р”Р—
 //Gyena : Cat
 
 class Gyena : public Cat
@@ -198,9 +198,9 @@ public:
 	Gyena()
 	{
 		cout << "ctor Cat\n";
-		species = "Гиена пятнистая";
+		species = "Р“РёРµРЅР° РїСЏС‚РЅРёСЃС‚Р°СЏ";
 	}
-	Gyena(string species): Cat(6, 20, Brown, "Эд")
+	Gyena(string species): Cat(6, 20, Brown, "Р­Рґ")
 	{
 		this->species = species;
 	}
@@ -212,7 +212,7 @@ public:
 
 	void voice() override
 	{
-		cout << "МИАуу";
+		cout << "РњРРђСѓСѓ";
 	}
 
 	void Show() override
@@ -236,13 +236,13 @@ class Dog : public Woolf
 public: 
 	void voice() override
 	{
-		if (type == "Белый клык")
+		if (type == "Р‘РµР»С‹Р№ РєР»С‹Рє")
 		{
-			cout << "УУУууууууууу";
+			cout << "РЈРЈРЈСѓСѓСѓСѓСѓСѓСѓСѓСѓ";
 		}
 		else
 		{
-			cout << "Гав-Гав-Гав";
+			cout << "Р“Р°РІ-Р“Р°РІ-Р“Р°РІ";
 		}
 
 	}
@@ -252,7 +252,7 @@ public:
 		Woolf::Show();
 		if (run)
 		{
-			cout << "Ездовой пёс" << "\t";
+			cout << "Р•Р·РґРѕРІРѕР№ РїС‘СЃ" << "\t";
 		}
 	}
 	bool getRun()
@@ -266,7 +266,7 @@ public:
 		run = false;
 	}
 
-	Dog(bool run) : Woolf( true, "Белый клык", White, 60 )
+	Dog(bool run) : Woolf( true, "Р‘РµР»С‹Р№ РєР»С‹Рє", White, 60 )
 	{
 		this->run = run;
 	}
@@ -283,29 +283,29 @@ void main()
 	setlocale(LC_ALL, "Rus");
 	srand(time(0));
 
-	//Cat obj;//сначала будет вызван конструктор базовго класса, а потом будет вызван конструктор текущего класса
+	//Cat obj;//СЃРЅР°С‡Р°Р»Р° Р±СѓРґРµС‚ РІС‹Р·РІР°РЅ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ Р±Р°Р·РѕРІРіРѕ РєР»Р°СЃСЃР°, Р° РїРѕС‚РѕРј Р±СѓРґРµС‚ РІС‹Р·РІР°РЅ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ С‚РµРєСѓС‰РµРіРѕ РєР»Р°СЃСЃР°
 	//Cat mycat(7);
-	//obj.Show();//обращение к методу из текущего класса
-	//obj.Animal::Show();//обращение к методу базового класса
+	//obj.Show();//РѕР±СЂР°С‰РµРЅРёРµ Рє РјРµС‚РѕРґСѓ РёР· С‚РµРєСѓС‰РµРіРѕ РєР»Р°СЃСЃР°
+	//obj.Animal::Show();//РѕР±СЂР°С‰РµРЅРёРµ Рє РјРµС‚РѕРґСѓ Р±Р°Р·РѕРІРѕРіРѕ РєР»Р°СЃСЃР°
 
 	vector <shared_ptr<Animal>> Zverinez;
 
-	Zverinez.push_back(make_shared<Cat>(9, 4, Brown, "Бернард Юджиан"));
-	Zverinez.push_back(make_shared<Cat>(5, 2, Red, "Мурзик"));
-	Zverinez.push_back(make_shared<Cat>(4, 5, Yellow, "Ми-Ми"));
-	Zverinez.push_back(make_shared<Cat>(2, 100, LightBlue, "Сомс"));
+	Zverinez.push_back(make_shared<Cat>(9, 4, Brown, "Р‘РµСЂРЅР°СЂРґ Р®РґР¶РёР°РЅ"));
+	Zverinez.push_back(make_shared<Cat>(5, 2, Red, "РњСѓСЂР·РёРє"));
+	Zverinez.push_back(make_shared<Cat>(4, 5, Yellow, "РњРё-РњРё"));
+	Zverinez.push_back(make_shared<Cat>(2, 100, LightBlue, "РЎРѕРјСЃ"));
 
-	Zverinez.push_back(make_shared<Woolf>(false, "Фенрир", Blue, 300));
-	Zverinez.push_back(make_shared<Woolf>(false, "Волк из мультика \"Жил-был пёс\"", LightMagenta, 40));
-	Zverinez.push_back(make_shared<Woolf>(false, "Капитолийская волчица", DarkGray, 70));
-	Zverinez.push_back(make_shared<Woolf>(true, "Акелла", LightGray, 150));
+	Zverinez.push_back(make_shared<Woolf>(false, "Р¤РµРЅСЂРёСЂ", Blue, 300));
+	Zverinez.push_back(make_shared<Woolf>(false, "Р’РѕР»Рє РёР· РјСѓР»СЊС‚РёРєР° \"Р–РёР»-Р±С‹Р» РїС‘СЃ\"", LightMagenta, 40));
+	Zverinez.push_back(make_shared<Woolf>(false, "РљР°РїРёС‚РѕР»РёР№СЃРєР°СЏ РІРѕР»С‡РёС†Р°", DarkGray, 70));
+	Zverinez.push_back(make_shared<Woolf>(true, "РђРєРµР»Р»Р°", LightGray, 150));
 
-	Zverinez.push_back(make_shared<Gyena>("Гиена пятнистая", 6, 19, Brown, "Эд"));
-	Zverinez.push_back(make_shared<Gyena>("Гиена пятнистая", 5, 22, Brown, "Банзай"));
-	Zverinez.push_back(make_shared<Gyena>("Гиена пятнистая", 4, 21, Brown, "Шензи"));
+	Zverinez.push_back(make_shared<Gyena>("Р“РёРµРЅР° РїСЏС‚РЅРёСЃС‚Р°СЏ", 6, 19, Brown, "Р­Рґ"));
+	Zverinez.push_back(make_shared<Gyena>("Р“РёРµРЅР° РїСЏС‚РЅРёСЃС‚Р°СЏ", 5, 22, Brown, "Р‘Р°РЅР·Р°Р№"));
+	Zverinez.push_back(make_shared<Gyena>("Р“РёРµРЅР° РїСЏС‚РЅРёСЃС‚Р°СЏ", 4, 21, Brown, "РЁРµРЅР·Рё"));
 
-	Zverinez.push_back(make_shared<Dog>(true, true, "Белый клык", White, 60));
-	Zverinez.push_back(make_shared<Dog>(true, false, "Одноглазый", White, 45));
+	Zverinez.push_back(make_shared<Dog>(true, true, "Р‘РµР»С‹Р№ РєР»С‹Рє", White, 60));
+	Zverinez.push_back(make_shared<Dog>(true, false, "РћРґРЅРѕРіР»Р°Р·С‹Р№", White, 45));
 
 
 
@@ -315,12 +315,12 @@ void main()
 	{
 		var->Show();
 		cout << endl;
-		cout << "Голос: ";
+		cout << "Р“РѕР»РѕСЃ: ";
 		var->voice();
 		cout << endl;
 	}
 
 
-		//Dog a(true, true, "Белый клык", White, 60);
+		//Dog a(true, true, "Р‘РµР»С‹Р№ РєР»С‹Рє", White, 60);
 		//a.Show();
 }
